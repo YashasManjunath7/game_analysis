@@ -1,12 +1,14 @@
 # Steam Game Analytics and Recommendation Platform
 
-This project is a **Dash-based web application** designed to analyze Steam game data, provide insights, and offer recommendations and predictions. It leverages machine learning models, statistical analysis, and data visualization to explore game ratings, pricing trends, success metrics, and more. The application is built with Python, using libraries like Pandas, Scikit-learn, Plotly, and Dash.
+This project is an interactive **Dash web application** that analyzes Steam game data, offering insights into ratings, pricing trends, and game success while providing recommendations and predictive analytics. Built in Python, it integrates data preprocessing, statistical analysis, machine learning models, and visualizations using libraries like Pandas, Scikit-learn, Plotly, and Dash.
+
+---
 
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Dependencies](#dependencies)
-- [Code Structure](#code-structure)
+- [Detailed Code Breakdown](#detailed-code-breakdown)
   - [Imports](#imports)
   - [Data Preprocessing](#data-preprocessing)
   - [Rating Analysis](#rating-analysis)
@@ -17,47 +19,43 @@ This project is a **Dash-based web application** designed to analyze Steam game 
   - [Tag Prediction](#tag-prediction)
   - [Dynamic Pricing](#dynamic-pricing)
   - [Dash Application](#dash-application)
-- [How to Run](#how-to-run)
-- [Future Improvements](#future-improvements)
+- [Setup and Usage](#setup-and-usage)
+- [Potential Enhancements](#potential-enhancements)
+
+---
 
 ## Project Overview
 
-The Steam Game Analytics and Recommendation Platform processes a dataset of Steam games (e.g., `games.csv`) to provide an interactive dashboard. Users can input a game title, price, and discount to explore:
-- Rating distributions and statistical summaries.
-- Historical price and discount trends.
-- Game recommendations based on similarity.
-- Predicted success metrics (positive review ratio).
-- Impact of Steam Deck compatibility.
-- Inferred game ratings/tags from titles.
-- Suggested pricing based on game features.
+The Steam Game Analytics and Recommendation Platform is designed to process a Steam game dataset (e.g., `games.csv`) and deliver an interactive dashboard. Users can input a game title, price, and discount percentage to explore detailed analytics and predictions. The application combines robust data preprocessing with advanced analytics, including time-series decomposition, statistical hypothesis testing, and machine learning-based recommendations and predictions, all presented through a sleek Dash interface.
 
-The project combines data cleaning, machine learning, statistical testing, and time-series analysis into a user-friendly interface.
+---
 
 ## Features
 
-- **Data Cleaning**: Loads and preprocesses Steam game data, handling missing values and standardizing features.
-- **Rating Analysis**: Visualizes rating distributions and computes statistical metrics (mean, std, confidence intervals).
-- **Price Trends**: Analyzes average price and discount trends over time with seasonal decomposition.
-- **Recommendation System**: Suggests similar games using cosine similarity on a feature matrix.
-- **Success Prediction**: Predicts a game's positive review ratio using a Random Forest Regressor.
-- **Steam Deck Impact**: Assesses the statistical impact of Steam Deck compatibility on game success.
-- **Tag Prediction**: Infers game ratings from titles using TF-IDF and Random Forest classification.
-- **Dynamic Pricing**: Suggests optimal pricing based on game attributes.
-- **Interactive Dashboard**: Built with Dash, allowing users to input game details and view real-time analytics.
+- **Data Preprocessing**: Cleans and standardizes game data for analysis.
+- **Rating Analysis**: Provides statistical insights into game ratings and positive review ratios.
+- **Price Trends**: Tracks historical pricing and discount patterns with trend analysis.
+- **Recommendation System**: Suggests similar games using cosine similarity.
+- **Success Prediction**: Forecasts game success (positive review ratio) with a Random Forest model.
+- **Steam Deck Impact**: Evaluates the effect of Steam Deck compatibility using statistical tests.
+- **Tag Prediction**: Infers ratings from game titles via text vectorization and classification.
+- **Dynamic Pricing**: Recommends optimal prices based on game features.
+- **Interactive Dashboard**: Allows real-time exploration of analytics via Dash.
+
+---
 
 ## Dependencies
 
-The project relies on the following Python libraries:
-- `dash`, `dash.dcc`, `dash.html`: For building the web application.
-- `plotly.express`: For interactive visualizations.
-- `pandas`, `numpy`: For data manipulation and numerical operations.
-- `joblib`: For saving and loading machine learning models.
-- `sklearn`: For preprocessing (LabelEncoder, StandardScaler), model training (RandomForest), and similarity computation (cosine_similarity).
-- `scipy`: For sparse matrices (csr_matrix) and statistical tests (ttest_ind).
-- `pingouin`: For computing effect sizes.
-- `statsmodels`: For time-series decomposition.
-- `typing`: For type hints.
+- `dash`, `dash.dcc`, `dash.html`: Web framework for the interactive dashboard.
+- `plotly.express`: High-level API for creating interactive plots.
+- `pandas`, `numpy`: Core libraries for data manipulation and computation.
+- `joblib`: Serialization of machine learning models.
+- `sklearn`: Tools for preprocessing, model training, and similarity metrics.
+- `scipy`: Sparse matrix support and statistical functions.
+- `pingouin`: Effect size calculations.
+- `statsmodels`: Time-series analysis utilities.
+- `typing`: Type annotations for better code clarity.
 
-Install dependencies using:
+Install with:
 ```bash
 pip install dash plotly pandas numpy joblib scikit-learn scipy pingouin statsmodels
